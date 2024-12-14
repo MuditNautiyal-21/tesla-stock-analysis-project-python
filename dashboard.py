@@ -1,4 +1,5 @@
 import dash
+import os
 from dash import dcc, html
 from dash.dependencies import Input, Output
 import plotly.graph_objects as go
@@ -127,4 +128,5 @@ def update_graph(chart_type, start_date, end_date):
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run_server(host='0.0.0.0', port=port, debug=True)
