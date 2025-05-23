@@ -80,9 +80,8 @@ This project analyzes historical Tesla (TSLA) stock data using statistical model
 - 🧭 Line and bar plots: Monthly average close price
 - 🔍 Heatmap: Correlation matrix of all key variables
 - 
-![Correlation Heatmap](./images/Correlation_Heatmap.png)
-
-![K-Means Clustering](./images/K-Means_Clustering.png)
+![Correlation Heatmap](images/Correlation_Heatmap.png)
+![K-Means Clustering](images/K-Means_Clustering.png)
 ---
 
 ## 📂 Folder Structure
