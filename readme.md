@@ -1,49 +1,91 @@
-# Tesla Stock Data Analysis
-## Project Overview
+# 📈 Tesla Stock Price Analysis using Regression, Clustering, and SQL
 
-This project analyzes Tesla stock data to figure out the pattern and trends. The data is cleaned, visualized and subjected to statistical analysis before building an interactive dashboard. The aim is to give readers an overall guideline on Tesla’s stocks and what they can do with it.
+## 🚀 Overview
+This project analyzes historical Tesla (TSLA) stock data using statistical modeling, clustering, and relational database techniques. It aims to understand stock behavior, engineer features, and build interpretable models — all backed by SQL-integrated pipelines.
 
-## Dataset
+---
 
-This project’s dataset has historical stock data of Tesla including.
+## 📊 Dataset
+- 📅 **Timeframe**: Multiple years of daily Tesla stock prices
+- 📦 **Source**: `TSLA.csv` (includes Open, High, Low, Close, Adj Close, Volume)
+- 🔁 **Resampling**: Monthly average data calculated for time-based trends
 
-    Day of/Moment: The date of stock data.
-    Opening Price: The initial price of a stock
-    Highest price the stock ever traded during the day.
-    The stock's price hit the lowest possible value during the day.
-    Ending value of the stock 
-    This is the price at which a stock is traded.
-    Number of shares traded; volume. 
+---
 
-From the Kaggle the data has been taken from TSLA_Prices.csv.
+## 🎯 Objectives
+- Clean and structure Tesla stock data
+- Engineer features (e.g., moving averages)
+- Store, query, and normalize data using SQLite
+- Predict closing price using regression models
+- Cluster historical stock behavior using KMeans
 
-## Analysis
+---
 
-The expressed content indicates the stages in the conduction of the analysis using Python.
+## 🧠 Key Techniques Used
+- 📐 **Data Cleaning**: Duplicate removal, outlier detection (IQR), missing value handling (FFill)
+- 🧮 **Feature Engineering**: 
+  - `Close_MA_3` → 3-month moving average  
+  - Time grouping for monthly analysis
+- 📊 **Modeling**:
+  - `Linear Regression` using Open, High, Low, Volume
+  - `KMeans Clustering` on numerical features
+- 🧩 **SQL Integration**:
+  - Used SQLite to store, query, and validate stock data
+  - Verified 1NF, 2NF, 3NF compliance
+  - Executed SQL transactions and created data views
 
-    Data cleaning involves filling in the holes and removing the duplicates.
-    Creating plots to visualize trends and patterns.
-    Performing hypothesis testing and regression analysis
-    Clustering and prediction modeling machine learning implementation.
+---
 
-## Files
+## 🧪 Regression Model Results
 
-    This dataset provides historical stock price information of Tesla.
-    The Jupyter Notebook that contains the code and outputs from the analysis in HTML.
+| Metric         | Value     |
+|----------------|-----------|
+| **Model**      | Linear Regression |
+| **RMSE**       | 4.25      |
+| **Predictors** | Open, High, Low, Volume |
+| **Target**     | Close     |
 
-## Instructions
+> Interpreted OLS regression summary to assess p-values and significance of predictors.
 
-    Make sure you have Python and Jupyter Notebook. Setup is easy with Anaconda; you can use it.
-    Data: Save the TSLA_Prices.csv file in the same folder as your Jupyter Notebook.
-    Run analysis: Open notebook and run the cells to conduct the analysis. 
-    Follow the directions in the notebook to create and view the interactive dashboard.
+---
 
-## Requirements
+## 📊 K-Means Clustering
 
-    Python 3.x.
-    Jupyter Notebook.
-    pandas, matplotlib, seaborn, numpy, sklearn, sqlite3, plotly (for dashboard).
+- Clustered stock records into 3 behavioral segments
+- Visualized clusters using Open vs Close price scatter plots
+- Useful for pattern discovery and potential risk segmentation
 
-## Conclusion
+---
 
-This project provides the stock data of Tesla with a comprehensive analysis of Tesla, which will be helpful for you. The dashboard helps find and study the stock behavior of the user.
+## 🗃️ SQL & Database Highlights
+
+- ✅ Created SQLite database `Tesla_Database.db`
+- 🗂️ Table: `TSLA_Prices` (custom schema)
+- 📋 Queries:
+  - High-volume day filter
+  - Monthly averages
+  - Transactional inserts
+  - Views for analytical queries
+- 📐 Verified:
+  - Atomicity (1NF)
+  - Functional dependency (2NF)
+  - Transitive dependency (3NF)
+
+---
+
+## 📈 Visual Highlights
+
+- 📦 Boxplots: Outliers before and after removal
+- 📊 Histograms: Distribution of Close prices (pre/post normalization)
+- 🧭 Line and bar plots: Monthly average close price
+- 🔍 Heatmap: Correlation matrix of all key variables
+
+---
+
+## 📂 Folder Structure
+📦 Tesla-Stock-Analysis
+├── TSLA.csv
+├── Mudit_Nautiyal_EAS503_Final_Project.ipynb
+├── Tesla_Database.db
+├── README.md
+└── requirements.txt
