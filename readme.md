@@ -86,9 +86,13 @@ This project analyzes historical Tesla (TSLA) stock data using statistical model
 ## 📂 Folder Structure
 ```
 📦 Tesla-Stock-Analysis
-├── TSLA.csv
+├── images
 ├── Mudit_Nautiyal_EAS503_Final_Project.ipynb
+├── Procfile
+├── TSLA.csv
+├── TSLA_Prices.csv
 ├── Tesla_Database.db
-├── README.md
+├── Dashboard.py
+├── readme.md
 └── requirements.txt
 ```
